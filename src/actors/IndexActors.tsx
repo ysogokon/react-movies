@@ -5,7 +5,7 @@ export default function IndexActors() {
     <>
       <h3>Actors</h3>
       <Link className="btn btn-primary" to="/actors/create">
-        Create genre
+        Create actor
       </Link>
     </>
   );
