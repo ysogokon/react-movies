@@ -13,6 +13,8 @@ export interface movieCreationDTO {
   releaseDate?: Date;
   poster?: File;
   posterURL?: string;
+  genresIds?: number[];
+  movieTheatersIds?: number[];
 }
 
 export interface landingPageDTO {
