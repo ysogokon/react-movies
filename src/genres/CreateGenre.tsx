@@ -1,7 +1,20 @@
+import axios from 'axios';
+import { useHistory } from 'react-router';
+import { urlGenres } from '../endpoints';
 import GenreForm from './GenreFrom';
+import { genreCreationDTO } from './genres.model';
 
 export default function CreateGenre() {
-  // const history = useHistory();
+  const history = useHistory();
+
+  async function create(genre: genreCreationDTO) {
+    try {
+      await axios.post(urlGenres, genre);
+      history.push('/genres');
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <>
@@ -9,9 +22,7 @@ export default function CreateGenre() {
       <GenreForm
         model={{ name: '' }}
         onSubmit={async value => {
-          // when form is posted
-          await new Promise(r => setTimeout(r, 1));
-          console.log(value);
+          await create(value);
         }}
       />
 
