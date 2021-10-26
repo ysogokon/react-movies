@@ -12,14 +12,15 @@ export default function GenreForm(props: genreFormProps) {
       onSubmit={props.onSubmit}
       validationSchema={Yup.object({
         name: Yup.string()
-          .required('Name field is required')
+          .required('This field is required')
           .max(50, 'Max length is 50 characters')
           .firstLetterUppercase(),
       })}
     >
       {formikProps => (
         <Form>
-          <TextField field="name" displayName="Name"></TextField>
+          <TextField field="name" displayName="Name" />
+
           <Button disabled={formikProps.isSubmitting} type="submit">
             Save Changes
           </Button>

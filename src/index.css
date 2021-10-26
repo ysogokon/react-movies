@@ -19,3 +19,7 @@ form > a {
 pointer {
   cursor: s;
 }
+
+table a {
+  margin-right: 1rem;
+}
