@@ -1,5 +1,5 @@
-// const baseURL = process.env.REACT_APP_API_URL;
-const baseURL = 'https://localhost:7082/api';
+const baseURL = process.env.REACT_APP_API_URL;
 export const urlGenres = `${baseURL}/genres`;
 export const urlActors = `${baseURL}/actors`;
+export const urlMovies = `${baseURL}/movies`;
 export const urlMovieTheaters = `${baseURL}/movietheaters`;

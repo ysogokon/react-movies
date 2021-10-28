@@ -15,13 +15,14 @@ import { genreDTO } from '../genres/genres.model';
 import { movieTheaterDTO } from '../movietheaters/movieTheater.model';
 import TypeAheadActors from '../forms/TypeAheadActors';
 import { actorMovieDTO } from '../actors/actors.model';
+import MarkdownField from '../forms/MarkdownField';
 
 export default function MovieForm(props: movieFormProps) {
   const [selectedGenres, setSelectedGenres] = useState(
-    mapToModel(props.selectedMovieTheaters)
+    mapToModel(props.selectedGenres)
   );
   const [nonSelectedGenres, setNonSelectedGenres] = useState(
-    mapToModel(props.nonSelectedMovieTheaters)
+    mapToModel(props.nonSelectedGenres)
   );
 
   const [selectedMovieTheaters, setSelectedMovieTheaters] = useState(
@@ -67,6 +68,8 @@ export default function MovieForm(props: movieFormProps) {
             field="poster"
             imageURL={props.model.posterURL}
           />
+
+          <MarkdownField displayName="Summary" field="summary" />
 
           <MultipleSelector
             displayName="Genres"

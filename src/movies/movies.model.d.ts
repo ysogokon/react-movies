@@ -1,6 +1,8 @@
 // This is type definiton files
 
 import { actorMovieDTO } from '../actors/actors.model';
+import { genreDTO } from '../genres/genres.model';
+import { movieTheaterDTO } from '../movietheaters/movieTheater.model';
 
 //
 export interface movieDTO {
@@ -13,6 +15,7 @@ export interface movieCreationDTO {
   title: string;
   inTheaters: boolean;
   trailer: string;
+  summary?: string;
   releaseDate?: Date;
   poster?: File;
   posterURL?: string;
@@ -24,4 +27,9 @@ export interface movieCreationDTO {
 export interface landingPageDTO {
   inTheaters?: movieDTO[];
   upcomingReleases?: movieDTO[];
+}
+
+export interface moviesPostGetDTO {
+  genres: genreDTO[];
+  movieTheaters: movieTheaterDTO[];
 }
