@@ -32,6 +32,7 @@ export default function CreateMovie() {
 
   async function create(movie: movieCreationDTO) {
     try {
+      console.log(movie);
       const formData = convertMovieToFormData(movie);
       const response = await axios({
         method: 'post',

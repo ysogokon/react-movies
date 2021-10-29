@@ -1,7 +1,7 @@
-import GenericList from '../utils/GenericList';
 import IndividualMovie from './IndividualMovie';
 import { movieDTO } from './movies.model';
 import css from './MoviesList.module.css';
+import GenericList from './../utils/GenericList';
 
 export default function MoviesList(props: moviesListProps) {
   return (
@@ -15,6 +15,6 @@ export default function MoviesList(props: moviesListProps) {
   );
 }
 
-export interface moviesListProps {
+interface moviesListProps {
   movies?: movieDTO[];
 }
