@@ -16,6 +16,7 @@ import RedirectToLandingPage from './utils/RedirectToLandingPage';
 import MovieDetails from './movies/MovieDetails';
 import Register from './auth/Register';
 import Login from './auth/Login';
+import IndexUsers from './auth/indexUsers';
 
 const routes = [
   { path: '/genres', component: IndexGenres, exact: true, isAdmin: true },
@@ -50,6 +51,7 @@ const routes = [
 
   { path: '/register', component: Register },
   { path: '/login', component: Login },
+  { path: '/users', component: IndexUsers, isAdmin: true },
 
   { path: '/', component: LandingPage, exact: true },
   { path: '*', component: RedirectToLandingPage },

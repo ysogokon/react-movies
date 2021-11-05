@@ -7,8 +7,10 @@ import { useEffect, useState } from 'react';
 import { claim } from './auth/auth.models';
 import AuthenticationContext from './auth/AuthenticationContext';
 import { getClaims } from './auth/handleJWT';
+import configureInterceptor from './utils/httpinterceptors';
 
 configureValidations();
+configureInterceptor();
 
 function App() {
   const [claims, setClaims] = useState<claim[]>([]);
@@ -34,7 +36,7 @@ function App() {
             {routes.map(route => (
               <Route key={route.path} path={route.path} exact={route.exact}>
                 {route.isAdmin && !isAdmin() ? (
-                  <>You are not allowed to view this page</>
+                  <>You are not allowed to see this page</>
                 ) : (
                   <route.component />
                 )}
