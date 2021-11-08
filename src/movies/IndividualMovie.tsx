@@ -18,6 +18,7 @@ export default function IndividualMovie(props: movieDTO) {
       customAlert();
     });
   }
+
   return (
     <div className={css.div}>
       <Link to={buildLink()}>

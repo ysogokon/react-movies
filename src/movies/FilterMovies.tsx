@@ -35,7 +35,7 @@ export default function FilterMovies() {
 
   useEffect(() => {
     if (query.get('title')) {
-      initialValues.title = query.get('title')!; // ! means cast to string even it is undefined
+      initialValues.title = query.get('title')!;
     }
 
     if (query.get('genreId')) {
@@ -111,7 +111,7 @@ export default function FilterMovies() {
                     type="text"
                     className="form-control"
                     id="title"
-                    placeholder="Title of the moive"
+                    placeholder="Title of the movie"
                     {...formikProps.getFieldProps('title')}
                   />
                 </div>
@@ -132,13 +132,13 @@ export default function FilterMovies() {
                   <div className="form-check">
                     <Field
                       className="form-check-input"
-                      id="upocomingReleases"
+                      id="upcomingReleases"
                       name="upcomingReleases"
                       type="checkbox"
                     />
                     <label
-                      htmlFor="upcmingReleases"
                       className="form-check-label"
+                      htmlFor="upcomingReleases"
                     >
                       Upcoming Releases
                     </label>
@@ -152,7 +152,7 @@ export default function FilterMovies() {
                       name="inTheaters"
                       type="checkbox"
                     />
-                    <label htmlFor="inTehaters" className="form-check-label">
+                    <label className="form-check-label" htmlFor="inTheaters">
                       In Theaters
                     </label>
                   </div>
@@ -162,10 +162,10 @@ export default function FilterMovies() {
                     className="btn btn-primary"
                     onClick={() => formikProps.submitForm()}
                   >
-                    Flter
+                    Filter
                   </Button>
                   <Button
-                    className="btn-danger ms-3"
+                    className="btn btn-danger ms-3"
                     onClick={() => {
                       formikProps.setValues(initialValues);
                       searchMovies(initialValues);

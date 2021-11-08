@@ -4,8 +4,8 @@ import * as Yup from 'yup';
 import Button from '../utils/Button';
 import { Link } from 'react-router-dom';
 import TextField from '../forms/TextField';
-import DateField from '../forms/DateField';
 import ImageField from '../forms/ImageField';
+import DateField from '../forms/DateField';
 import CheckboxField from '../forms/CheckboxField';
 import MultipleSelector, {
   multipleSelectorModel,
@@ -13,7 +13,7 @@ import MultipleSelector, {
 import { useState } from 'react';
 import { genreDTO } from '../genres/genres.model';
 import { movieTheaterDTO } from '../movietheaters/movieTheater.model';
-import TypeAheadActors from '../forms/TypeAheadActors';
+import TypeAheadActor from '../forms/TypeAheadActors';
 import { actorMovieDTO } from '../actors/actors.model';
 import MarkdownField from '../forms/MarkdownField';
 
@@ -53,7 +53,7 @@ export default function MovieForm(props: movieFormProps) {
       }}
       validationSchema={Yup.object({
         title: Yup.string()
-          .required('Title field is required')
+          .required('This field is required')
           .firstLetterUppercase(),
       })}
     >
@@ -62,7 +62,7 @@ export default function MovieForm(props: movieFormProps) {
           <TextField displayName="Title" field="title" />
           <CheckboxField displayName="In Theaters" field="inTheaters" />
           <TextField displayName="Trailer" field="trailer" />
-          <DateField displayName="Display Date" field="releaseDate" />
+          <DateField displayName="Release Date" field="releaseDate" />
           <ImageField
             displayName="Poster"
             field="poster"
@@ -91,7 +91,7 @@ export default function MovieForm(props: movieFormProps) {
             }}
           />
 
-          <TypeAheadActors
+          <TypeAheadActor
             displayName="Actors"
             actors={selectedActors}
             onAdd={actors => {
@@ -105,8 +105,8 @@ export default function MovieForm(props: movieFormProps) {
               <>
                 {actor.name} /{' '}
                 <input
-                  type="text"
                   placeholder="Character"
+                  type="text"
                   value={actor.character}
                   onChange={e => {
                     const index = selectedActors.findIndex(
@@ -125,7 +125,7 @@ export default function MovieForm(props: movieFormProps) {
           <Button disabled={formikProps.isSubmitting} type="submit">
             Save Changes
           </Button>
-          <Link className="btn btn-secondary" to="/genres">
+          <Link className="btn btn-secondary" to="/">
             Cancel
           </Link>
         </Form>

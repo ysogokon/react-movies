@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { urlMovies } from '../endpoints';
 import { genreDTO } from '../genres/genres.model';
 import { movieTheaterDTO } from '../movietheaters/movieTheater.model';
@@ -15,7 +15,6 @@ export default function CreateMovie() {
   const [nonSelectedMovieTheaters, setNonSelectedMovieTheaters] = useState<
     movieTheaterDTO[]
   >([]);
-
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState<string[]>([]);
   const history = useHistory();
@@ -32,7 +31,6 @@ export default function CreateMovie() {
 
   async function create(movie: movieCreationDTO) {
     try {
-      console.log(movie);
       const formData = convertMovieToFormData(movie);
       const response = await axios({
         method: 'post',

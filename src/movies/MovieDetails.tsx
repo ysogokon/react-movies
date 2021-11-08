@@ -1,15 +1,14 @@
 import axios, { AxiosResponse } from 'axios';
-import Map from '../utils/Map';
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Link, useParams } from 'react-router-dom';
 import { urlMovies, urlRatings } from '../endpoints';
-import Loading from '../utils/Loading';
-import { movieDTO } from './movies.model';
 import coordinateDTO from '../utils/coordinates.model';
+import Loading from '../utils/Loading';
+import Map from '../utils/Map';
+import { movieDTO } from './movies.model';
 import Ratings from '../utils/Ratings';
 import Swal from 'sweetalert2';
-import { title } from 'process';
 
 export default function MovieDetails() {
   const { id }: any = useParams();
@@ -74,8 +73,9 @@ export default function MovieDetails() {
         >
           {genre.name}
         </Link>
-      ))}
-      | {movie.releaseDate.toDateString()}| Your vote:{' '}
+      ))}{' '}
+      | {movie.releaseDate.toDateString()}
+      | Your vote:{' '}
       <Ratings
         maximumValue={5}
         selectedValue={movie.userVote}

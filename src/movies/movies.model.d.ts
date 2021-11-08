@@ -1,10 +1,7 @@
-// This is type definiton files
-
-import { actorDTO, actorMovieDTO } from '../actors/actors.model';
 import { genreDTO } from '../genres/genres.model';
 import { movieTheaterDTO } from '../movietheaters/movieTheater.model';
+import { actorMovieDTO } from '../actors/actors.model';
 
-//
 export interface movieDTO {
   id: number;
   title: string;
